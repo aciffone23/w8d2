@@ -89,5 +89,33 @@ function sum(subsum, num) {
   return subsum + num;
 }
 
-test6 = [1, 2, 3, 4, 7, 8];
-console.log(test6.myReduce(sum, 5));
+// test6 = [1, 2, 3, 4, 7, 8];
+// console.log(test6.myReduce(sum, 5));
+
+Array.prototype.bubble_sort = function() {
+  let sorted = false;
+  while (!sorted) {
+    sorted = true; 
+    for (let i = 0; i < this.length - 1; i++)
+    if (this[i] > this[i + 1]) {
+      [this[i], this[i+1]] = [this[i+1], this[i]];
+      sorted = false;
+    }
+    
+  } return this;
+}
+
+// test7 = [1, 5, 4, 3, 7, 8];
+// console.log(test7.bubble_sort());
+
+String.prototype.subStrings = function() {
+  let result = [];
+  for (let i = 0; i < this.length; i++){
+    for (let j = i + 1; j <= this.length; j++){
+    result.push(this.slice(i,j));
+    } 
+  }return result;
+}
+
+test8 = "jump"
+console.log(test8.subStrings())
